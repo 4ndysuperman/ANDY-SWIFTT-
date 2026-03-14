@@ -1,0 +1,41 @@
+{
+  "name": "cybertoji-xmd-bot",
+  "version": "4.0.0",
+  "description": "CyberToji XMD - Advanced WhatsApp Bot by Lord Dev Dostoevsky \ud83c\udded\ud83c\uddf9",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "npm install --legacy-peer-deps --silent && pip3 install yt-dlp --quiet --break-system-packages 2>/dev/null || pip install yt-dlp --quiet 2>/dev/null || true && npx -y cloudflared tunnel --url http://localhost:2003 &> /tmp/tunnel.log & sleep 8 && node index.js",
+    "dev": "nodemon index.js",
+    "clean": "rm -rf auth_info_baileys bot_data store",
+    "backup": "tar -czf backup_$(date +%Y%m%d_%H%M%S).tar.gz bot_data auth_info_baileys store"
+  },
+  "keywords": [
+    "whatsapp",
+    "bot",
+    "baileys",
+    "cybertoji",
+    "xmd",
+    "haiti"
+  ],
+  "author": "Lord Dev Dostoevsky",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.6.0",
+    "bail-lite": "^1.0.3",
+    "cheerio": "^1.0.0",
+    "fluent-ffmpeg": "^2.1.3",
+    "pino": "^9.5.0",
+    "qrcode-terminal": "^0.12.0",
+    "sharp": "^0.34.1",
+    "unzipper": "^0.12.3",
+    "wa-sticker-formatter": "^4.0.7",
+    "@whiskeysockets/baileys": "^6.7.9"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.7"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
